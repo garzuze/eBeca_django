@@ -28,3 +28,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def display_price(self):
+        return int(self.price) / 100
