@@ -7,12 +7,13 @@
     </div>
 
     <div class="information w-full lg:w-2/5 lg:p-6">
-        <h1 class="text-2xl font-medium text-blue-600">Nome do produto</h1>
+        <h1 class="text-2xl font-medium text-blue-600">{{product.name}}</h1>
 
-        <p class="mt-1 text-gray-400">Preço do produto</p>
+        <p class="mt-1 text-gray-400">{{product.display_price}}</p>
 
-        <p class="mt-6 text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, rem, iste, sed similique iusto dolorem voluptas expedita illo blanditiis dolorum natus pariatur accusamus. Voluptatum, laudantium asperiores. Totam hic reprehenderit labore.</p>
-        
+        {% if product.description %}
+            <p class="mt-6 text-gray-700">{{product.description}}</p>
+        {% endif %}    
         <a href="" class="mt-6 inline-block px-8 py-4 rounded-xl bg-blue-500 text-white hover:bg-blue-700">
             Adicionar ao carrinho
         </a>
