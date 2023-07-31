@@ -26,8 +26,10 @@ SECRET_KEY = 'django-insecure-sn#q2=1x0il*$&1z16-%6-bbzd--8bb^^+8b$rag*p317ktb&o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+SESSION_COOKIE_AGE = 86400
+CART_SESSION_ID = 'cart'
 
 # Application definition
 
@@ -39,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
-    'product.apps.ProductConfig'
+    'product.apps.ProductConfig',
+    'cart.apps.CartConfig'
 ]
 
 MIDDLEWARE = [
