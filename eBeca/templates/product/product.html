@@ -3,7 +3,7 @@
 {% block content %}
 <div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
     <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
-        <img class="rounded-xl" src="https://http2.mlstatic.com/D_NQ_NP_856081-MLB50249861950_062022-O.webp">
+        <img class="rounded-xl w-full" src="{% if product.image %}{{ product.image.url }}{% else %}https://via.placeholder.com/240x240x.jpg{% endif %}">
     </div>
 
     <div class="information w-full lg:w-2/5 lg:p-6">
