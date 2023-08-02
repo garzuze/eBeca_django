@@ -16,6 +16,10 @@
                 <ul class="flex items-center space-x-4">
                     <li><a href="{% url 'shop' %}" class="font-medium text-green-500 hover:text-green-900">Comprar</a></li>
                     <li><a href="" class="font-medium text-green-500 hover:text-green-900">Sobre</a></li>
+
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}" class="font-medium text-green-500 hover:text-green-900">Logout</a></li>
+                    {% endif %}
                 </ul>
             </div>
 
