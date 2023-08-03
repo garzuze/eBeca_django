@@ -22,8 +22,7 @@ class Cart(object):
 
     def __len__(self):
         """Retorna a quantidade de produtos no carrinho"""
-        for item in self.cart.values():
-            return sum(item['quantity'])
+        return sum(item['quantity'] for item in self.cart.values())
         
     def save(self):
         """Salva os produtos no carrinho"""
