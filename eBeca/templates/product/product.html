@@ -14,7 +14,13 @@
         {% if product.description %}
             <p class="mt-6 text-gray-700">{{product.description}}</p>
         {% endif %}    
-        <a href="" class="mt-6 inline-block px-8 py-4 rounded-xl bg-blue-500 text-white hover:bg-blue-700">
+        <a 
+            href="{% url 'add_to_cart' product.id %}"
+            class="mt-6 inline-block px-8 py-4 rounded-xl bg-blue-500 text-white hover:bg-blue-700"
+            hx-get="{% url 'add_to_cart' product.id %}"
+            hx-target="#menu-cart-button" 
+            hx-swap="outerHTML"    
+        >
             Adicionar ao carrinho
         </a>
     </div>
