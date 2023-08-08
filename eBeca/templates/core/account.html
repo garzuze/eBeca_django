@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Minha conta{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto p-6">
+    <h1 class="mb-5 text-3xl">Minha conta</h1>
+
+    <div class="mb-6">
+        <strong>Name: </strong>{{request.user.get_full_name}}<br>
+        <strong>Username: </strong>{{request.user.username}}<br>
+        <strong>E-mail: </strong>{{request.user.email}}<br>
+
+        <a href="{% url 'edit_account' %}" class="inline-block p-2 rounded-lg text-white bg-blue-500">Editar</a>
+    </div>
+
+    <hr>
+
+    <h2 class="my-6 text-xl">Meus pedidos</h2>
+
+    <div class="w-full mb-6 p-6 flex flex-wrap bg-gray-100 rounded-xl">
+        <div class="mb-6 flex justify-between">
+            <a href="">Order id: 1</a>
+        </div>
+
+        <div class="mb-6 w-full">
+            <div class="product mb-6 flex pr-6"></div>
+            <a href="" class="w-1/4">
+                <img class="hover:shadow-lg rounded-xl" src="">
+            </a>
+
+            <div class="w-3/4 pl-6">
+                <div class="flex justify-between">
+                    <a href="" class="text-lg">Nome do produto</a>
+
+                    <p class="mb-6 pt-1 text-gray-400">R$9.90</p>
+                </div>
+                <hr>
+                <div class="mt-6">
+                    Quantidade: 1
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <p class="text-xl">Data: 08/08/2023</p>
+        <p class="text-xl">Total: R$500.00</p>
+    </div>
+
+</div>
+{% endblock %}

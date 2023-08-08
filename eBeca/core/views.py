@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 
 from django.db.models import Q
 from django.shortcuts import render, redirect
@@ -14,9 +15,6 @@ def frontpage(request):
 
     return render(request, 'core/frontpage.html', {'products': products})
 
-def user_login(request):
-    return render(request, 'core/login.html')
-
 def signup(request):
     if request.method =='POST':
         form = SignUpForm(request.POST)
@@ -31,6 +29,26 @@ def signup(request):
         form = SignUpForm()
 
     return render(request, 'core/signup.html', {'form': form})
+
+@login_required
+def account(request):
+    return render(request, 'core/account.html')
+
+@login_required
+def edit_account(request):
+
+    if request.method == 'POST':
+        user = request.user
+        user.first_name = request.POST.get('first_name')
+        user.last_name = request.POST.get('last_name')
+        user.username = request.POST.get('username')
+        user.email = request.POST.get('email')
+
+        user.save()
+
+        return redirect('account')
+
+    return render(request, 'core/edit_account.html')
 
 def shop(request):
     products = Product.objects.all()
