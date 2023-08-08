@@ -30,9 +30,12 @@ ALLOWED_HOSTS = ['*']
 
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
 
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
+
+CSRF_TRUSTED_ORIGINS = ['https://7b87-2804-14c-87c1-d19a-38f2-2e44-e609-1e4c.ngrok-free.app']
 
 # Application definition
 

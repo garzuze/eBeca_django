@@ -20,6 +20,11 @@ class Cart(object):
         for key in self.cart.keys():
             self.cart[str(key)]['product'] = Product.objects.get(pk=key)
 
+        for item in self.cart.values():
+            item['total_price'] = int(item['product'].price * item['quantity']) / 100
+
+            yield item
+
     def __len__(self):
         """Retorna a quantidade de produtos no carrinho"""
         return sum(item['quantity'] for item in self.cart.values())
@@ -49,3 +54,9 @@ class Cart(object):
         if product_id in self.cart:
             del self.cart[product_id]
             self.save()
+
+    def get_total(self):
+        for key in self.cart.keys():
+            self.cart[str(key)]['product'] = Product.objects.get(pk=key)
+
+        return int(round(sum(item['product'].price * item['quantity'] for item in self.cart.values()), 2)) / 100
