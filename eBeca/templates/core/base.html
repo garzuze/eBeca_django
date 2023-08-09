@@ -30,7 +30,15 @@
                       </svg>                      
                 </a>
                 
-                {% include 'cart/menu_cart.html' %}
+                <!-- Event listener em htmx -->
+                <div
+                    hx-get="{% url 'hx_menu_cart' %}"
+                    hx-trigger="update-menu-cart from:body"
+                    hx-swap="innerHTML"
+                    >
+                    {% include 'cart/menu_cart.html' %}
+                </div>
+
             </div>
         </div>
     </nav>
