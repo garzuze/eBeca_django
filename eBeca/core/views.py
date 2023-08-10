@@ -62,7 +62,7 @@ def shop(request):
     query = request.GET.get('query', '')
 
     if query:
-        products = products.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        products = products.filter(Q(name__icontains=query) | Q(description__icontains= query))
     
     context = {
         'products': products,
