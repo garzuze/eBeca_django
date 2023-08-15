@@ -15,7 +15,7 @@
 
                 <ul class="flex items-center space-x-4">
                     <li><a href="{% url 'shop' %}" class="font-medium text-green-500 hover:text-green-900">Comprar</a></li>
-                    <li><a href="" class="font-medium text-green-500 hover:text-green-900">Sobre</a></li>
+                    <li><a href="{% url 'about' %}" class="font-medium text-green-500 hover:text-green-900">Sobre</a></li>
 
                     {% if request.user.is_authenticated %}
                         <li><a href="{% url 'logout' %}" class="font-medium text-green-500 hover:text-green-900">Logout</a></li>
@@ -60,9 +60,7 @@
             <div class="footer-right ">
                 <h2 class="mb-5 uppercase text-lg">Redes sociais</h2>
                 <ul class="space-y-2">
-                    <li><a href="" class="text-blue-400 hover:text-blue-900">Facebook</a></li>
-                    <li><a href="" class="text-blue-400 hover:text-blue-900">LinkedIn</a></li>
-                    <li><a href="" class="text-blue-400 hover:text-blue-900">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/marloncordeiro/" class="text-blue-400 hover:text-blue-900">LinkedIn</a></li>
                 </ul>
             </div>
         </div>
