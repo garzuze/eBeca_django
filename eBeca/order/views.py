@@ -7,6 +7,13 @@ from cart.cart import Cart
 
 def start_order(request):
     cart = Cart(request)
+    total_price = 0
+
+    items = []
+
+    for item in cart:
+        product = item['product']
+        total_price += product.price * int(item['quantity'])
 
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
@@ -17,8 +24,9 @@ def start_order(request):
         phone = request.POST.get('phone')
 
         order = Order.objects.create(user=request.user, first_name=first_name,
-                                     last_name=last_name, email=email,
-                                     address=address, cep=cep, phone=phone)
+                                    last_name=last_name, email=email,
+                                    address=address, cep=cep, phone=phone, 
+                                    paid=True, paid_amount=total_price)
         
         for item in cart:
             product = item['product']
@@ -26,6 +34,8 @@ def start_order(request):
             price = product.price * quantity
 
             item = OrderItem.objects.create(order=order, product=product, price=price, quantity=quantity)
+
+        cart.clear()
 
         return redirect('account')
     

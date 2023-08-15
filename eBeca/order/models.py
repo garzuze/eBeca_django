@@ -26,10 +26,20 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     paid = models.BooleanField(default=False)
-    paid_ammount = models.IntegerField(blank=True, null=True)
+    paid_amount = models.IntegerField(blank=True, null=True)
 
 
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=ORDERED)
+
+    class Meta:
+        ordering = ('-created_at', )
+
+    def get_total(self):
+        if self.paid_amount:
+            return self.paid_amount / 100
+        
+        return 0
+
 
 
 class OrderItem(models.Model):
@@ -37,3 +47,6 @@ class OrderItem(models.Model):
     product = models.ForeignKey(Product, related_name='items', on_delete=models.CASCADE)
     price = models.IntegerField()
     quantity = models.IntegerField(default=1)
+
+    def get_total(self):
+        return self.price / 100

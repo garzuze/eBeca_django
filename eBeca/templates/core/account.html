@@ -19,10 +19,10 @@
     <h2 class="my-6 text-xl">Meus pedidos</h2>
 
     {% for order in request.user.orders.all%}
-    <div class="w-full mb-6 p-6 flex flex-wrap bg-gray-100 rounded-xl">
-        <div class="mb-6 flex justify-between">
-            <a href="">Order id: {{order.id}}</a>
-        </div>
+        <div class="w-full mb-6 p-6 flex flex-wrap bg-gray-100 rounded-xl">
+            <div class="mb-6 flex justify-between">
+                <a href="">Order id: {{order.id}}</a>
+            </div>
 
         <div class="mb-6 w-full">
             {% for item in order.items.all %}
@@ -35,21 +35,22 @@
                         <div class="flex justify-between">
                             <a href="" class="text-lg">{{item.product.name}}</a>
 
-                            <p class="mb-6 pt-1 text-gray-400">{{item.product.display_price}}</p>
+                            <p class="mb-6 pt-1 text-gray-400">{{item.get_total}}</p>
                         </div>
+
                         <hr>
+
                         <div class="mt-6">
                             Quantidade: {{item.quantity}}
                         </div>
                     </div>
                 </div>
             {% endfor %}
+            <div>
+                <p class="text-xl">Data: {{ order.created_at}}</p>
+                <p class="text-xl">Total: R$ {{ order.get_total }}</p>
+            </div>
         </div>
-
-    <div>
-        <p class="text-xl">Data: {{ order.created_at}}</p>
-        <p class="text-xl">Total: R$500.00</p>
     </div>
     {% endfor %}
-</div>
 {% endblock %}
