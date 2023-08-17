@@ -2,7 +2,7 @@
 
     <a href="{% url 'product' product.slug %}">
         {% if product.image %}
-            <img class="rounded-xl hover:shadow-lg" src="{{product.get_thumbnail}}">
+            <img class="w-full rounded-xl hover:shadow-lg" src="{{product.get_thumbnail}}">
         {% endif %}
     </a>
 
