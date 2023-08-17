@@ -4,22 +4,21 @@
 {% block title %}Sobre{% endblock %}
 
 {% block content %}
-<div class="flex w-full">
-    <div class="w-1/2 ml-24">
+<div class="sm:flex">
+    <div class="foto w-full sm:w-1/2 mx-auto p-4">
         <img src="{% static 'core/ceo.jpg' %}"
-            class="w-full rounded-l-2xl">
+            class="w-full rounded-xl">
     </div>
-    <div class="w-1/2 bg-blue-600 p-12 rounded-r-xl mr-24">
-        <h1 class="mb-2 text-3xl lg:text-5xl text-white">Nós vendemos meias para jogadores caros.</h1>
+    <div class="descricao w-full sm:w-1/2 mx-auto bg-blue-600 rounded-xl p-6">
+        <h1 class="mb-2 text-2xl lg:text-3xl text-white">Nós vendemos meias para jogadores caros.</h1>
 
-        <p class="mt-6 text-lg font-normal text-gray-100 lg:text-xl">
+        <p class="mt-6 text-md font-normal text-gray-100 lg:text-xl">
             Oferecemos as melhores meias para os melhores atletas. Na eBeca, 
             elevamos o jogo a cada passo com nossas meias antiderrapantes exclusivas 
             para jogadores de futebol. Seja nos dribles rápidos ou nas arrancadas decisivas, 
             as meias eBeca são o parceiro definitivo para alcançar o melhor desempenho em campo.
             Entre no jogo com eBeca e mantenha o controle do seu caminho para a vitória!
         </p>
-
     </div>
 </div>
 
