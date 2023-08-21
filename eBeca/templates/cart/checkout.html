@@ -9,29 +9,29 @@
         <form method="post" action="{% url 'start_order' %}">
             {% csrf_token %}
         
-            <div class="w-full md:pr-6">
+            <div class="w-full sm:pr-6">
                 <div class="mb-6 p-6 bg-gray-100 rounded-xl">
                     <h2 class="mb-5 uppercase text-lg">Informações de envio</h2>
 
-                    <div class="flex space-x-6">
-                        <div class="w-1/2 mb-4">
+                    <div class="sm:flex sm:space-x-6">
+                        <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Nome</label>
                             <input name="first_name" type="text" class="w-full p-5 rounded-xl" value="{{ request.user.first_name }}">
                         </div>
 
-                        <div class="w-1/2 mb-4">
+                        <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Sobrenome</label>
                             <input name="last_name" type="text" class="w-full p-5 rounded-xl" value="{{request.user.last_name}}">
                         </div>
                     </div>
 
-                    <div class="flex space-x-6">
-                        <div class="w-1/2 mb-4">
+                    <div class="sm:flex sm:space-x-6">
+                        <div class="w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">CEP</label>
                             <input name="cep" type="number" class="w-full p-5 rounded-xl">
                         </div>
 
-                        <div class="w-1/2 mb-4">
+                        <div class="w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Endereço</label>
                             <input name="address" type="text" class="w-full p-5 rounded-xl">
                         </div>
@@ -41,19 +41,17 @@
                 <div class="mb-6 p-6 bg-gray-100 rounded-xl">
                     <h2 class="mb-5 uppercase text-lg">Informações de contato</h2>
 
-                    <div class="mb-4">
-                        <label class="inline-block mb-2">Email</label>
-                        <input name="email" type="email" class="w-full p-5 rounded-xl" value="{{request.user.email}}">
-                    </div>
+                    <div class="sm:flex sm:space-x-6">
+                        <div class="w-full sm:w-full sm:w-1/2 mb-4">
+                            <label class="inline-block mb-2">Email</label>
+                            <input name="email" type="email" class="w-full p-5 rounded-xl" value="{{request.user.email}}">
+                        </div>
 
-                    <div class="mb-4">
-                        <label class="inline-block mb-2">Telefone</label>
-                        <input name="phone" type="number" class="w-full p-5 rounded-xl">
+                        <div class="w-full sm:w-full sm:w-1/2 mb-4">
+                            <label class="inline-block mb-2">Telefone</label>
+                            <input name="phone" type="number" class="w-full p-5 rounded-xl">
+                        </div>
                     </div>
-                </div>
-
-                <div class="mb-6 p-6 bg-gray-100 rounded-xl">
-                    <h2 class="mb-5 uppercase text-lg">Informações de pagamento</h2>
                 </div>
             </div>
         </div>
@@ -67,7 +65,7 @@
             </div>
 
             <button 
-                class="inline-block px-8 py-4 rounded-xl bg-blue-500 hover:bg-blue-700 text-white">
+                class="w-full inline-block px-8 py-4 rounded-xl bg-blue-500 hover:bg-blue-700 text-white">
                 Finalizar compra
             </button>
         </div>

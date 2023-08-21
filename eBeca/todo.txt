@@ -2,5 +2,6 @@
 - Deixar cadastro funcional
 - Adicionar QRcode com pix do pai como método de pagamento
 - Finalizar página de sucesso
-- Consertar responsividade da página de checkout
+- Consertar responsividade da página de checkout @done
 - Adicionar informações preenchidas no checkout (cep, endereço e telefone) no cadastro
+- Consertar erro de checkout vazio
