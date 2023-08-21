@@ -36,7 +36,7 @@ STATIC_URL = "static/"
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
 
-CSRF_TRUSTED_ORIGINS = ['https://7b87-2804-14c-87c1-d19a-38f2-2e44-e609-1e4c.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://4017-2804-14c-87c1-d19a-b8a6-6180-72e0-feb.ngrok-free.app']
 
 # Application definition
 
