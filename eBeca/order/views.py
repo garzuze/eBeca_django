@@ -9,8 +9,6 @@ def start_order(request):
     cart = Cart(request)
     total_price = 0
 
-    items = []
-
     for item in cart:
         product = item['product']
         total_price += product.price * int(item['quantity'])
@@ -37,6 +35,6 @@ def start_order(request):
 
         cart.clear()
 
-        return redirect('account')
+        return redirect('success')
     
     return redirect('cart')

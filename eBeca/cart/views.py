@@ -12,8 +12,7 @@ def add_to_cart(request, product_id):
     return render(request, 'cart/partials/menu_cart.html')
 
 def cart(request):
-    request.session.get('fav_color', 'red')
-
+    
     return render(request, 'cart/cart.html')
 
 def success(request):
