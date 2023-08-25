@@ -10,21 +10,21 @@
             {% csrf_token %}
         
             <div class="w-full sm:pr-6">
-                <div class="mb-6 p-6 bg-gray-100 rounded-xl">
+                <div class="mb-6 p-6 bg-gray-100 rounded-xl border-0">
                     <h2 class="mb-5 uppercase text-lg">Informações de envio</h2>
 
                     <div class="sm:flex sm:space-x-6">
                         <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Nome</label>
                             <input name="first_name" type="text" 
-                            class="w-full p-5 rounded-xl" 
+                            class="w-full p-5 rounded-xl border-0" 
                             value="{{ request.user.first_name }}" required>
                         </div>
 
                         <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Sobrenome</label>
                             <input name="last_name" type="text"
-                            class="w-full p-5 rounded-xl" 
+                            class="w-full p-5 rounded-xl border-0" 
                             value="{{request.user.last_name}}" required>
                         </div>
                     </div>
@@ -33,13 +33,13 @@
                         <div class="w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">CEP</label>
                             <input name="cep" type="number"
-                            class="w-full p-5 rounded-xl" required>
+                            class="w-full p-5 rounded-xl border-0" required>
                         </div>
 
                         <div class="w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Endereço</label>
                             <input name="address" type="text"
-                            class="w-full p-5 rounded-xl" required>
+                            class="w-full p-5 rounded-xl border-0" required>
                         </div>
                     </div>
                 </div>
@@ -51,14 +51,14 @@
                         <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Email</label>
                             <input name="email" type="email" 
-                            class="w-full p-5 rounded-xl" 
-                            value="{{request.user.email}}" required>
+                            class="w-full p-5 rounded-xl border-0" 
+                            value="{{ request.user.email }}" required>
                         </div>
 
                         <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Telefone</label>
                             <input name="phone" type="number" 
-                            class="w-full p-5 rounded-xl" required>
+                            class="w-full p-5 rounded-xl border-0" required>
                         </div>
                     </div>
                 </div>

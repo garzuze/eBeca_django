@@ -1,5 +1,5 @@
 **Lista de tarefas do projeto**
-- Deixar cadastro funcional
+- Deixar cadastro funcional @done
 - Adicionar informações preenchidas no checkout (cep, endereço e telefone) no cadastro
 - Consertar erro de checkout vazio @done
 - Adicionar QRcode com pix do pai como método de pagamento @done
