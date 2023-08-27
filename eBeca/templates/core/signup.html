@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="max-w-lg mx-auto flex flex-wrap p-6">
-    <div class="w-full bg-gray-100 p-6 rounded-xl border-0 shadow-xl">
+    <div class="w-full bg-gray-100 p-6 rounded-xl shadow-xl">
         <h1 class="mb-6 text-2xl font-medium text-blue-500">Cadastrar-se</h1>
 
         <form method="post" action="." class="space-y-3">
@@ -12,34 +12,34 @@
 
             <div>
                 <label for="username">Usuário</label>
-                <input id="username" name="username" type="text" class="w-full mt-2 py-4 px-6 bg-white rounded-xl border-0">
+                <input id="username" name="username" type="text" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
             </div>
 
             <div>
                 <label for="nome">Nome</label>
-                <input id="nome" name="first_name" type="text" class="w-full mt-2 py-4 px-6 bg-white rounded-xl border-0">
+                <input id="nome" name="first_name" type="text" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
             </div>
 
             <div>
                 <label for="sobrenome">Sobrenome</label>
-                <input id="sobrenome" name="last_name"type="text" class="w-full mt-2 py-4 px-6 bg-white rounded-xl border-0">
+                <input id="sobrenome" name="last_name"type="text" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
             </div>
 
             <div>
                 <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" class="w-full mt-2 py-4 px-6 bg-white rounded-xl border-0">
+                <input id="email" name="email" type="email" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
             </div>
 
             <div>
                 <label for="pwd">Senha</label>
-                <input id="pwd" name="password1" type="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl border-0">
+                <input id="pwd" name="password1" type="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
             </div>
 
             <div>
                 <label for="re_pwd">Repita a senha</label>
-                <input id="re_pwd" name="password2" type="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl border-0">
+                <input id="re_pwd" name="password2" type="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
             </div>
-            {% if form.erros %}
+            {% if form.errors %}
                 {% for field in form %}
                     {% for error in field.errors%}
                         <div class="p-6 bg-red-200 text-red-800 rounded-xl">
@@ -54,7 +54,7 @@
                 {% endfor %}
             {% endif %}
             <div>
-                <button class="w-full py-4 px-6 rounded-xl text-white bg-green-500 hover:bg-green-700">Enviar</button>
+                <button class="w-full py-4 px-6 rounded-xl text-white bg-green-500 hover:bg-green-700" type="submit">Enviar</button>
             </div>
         </form>
     </div>
