@@ -27,7 +27,7 @@ def signup(request):
 
             login(request, user)
 
-            return redirect('/')
+            return redirect('account')
     else:
         form = SignUpForm()
 
