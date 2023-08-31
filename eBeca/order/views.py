@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 
+
 # Create your views here.
 
 from .models import Order, OrderItem
@@ -15,12 +16,19 @@ def start_order(request):
             total_price += product.price * int(item['quantity'])
 
         if request.method == 'POST':
+            profile = request.user.userprofile
             first_name = request.POST.get('first_name')
             last_name = request.POST.get('last_name')
             email = request.POST.get('email')
             address = request.POST.get('address')
             cep = request.POST.get('cep')
             phone = request.POST.get('phone')
+
+            # atualizando profile do usuário com informações adicionais
+            profile.cep = cep
+            profile.phone = phone
+            profile.address = address
+            profile.save()
 
             order = Order.objects.create(user=request.user, first_name=first_name,
                                         last_name=last_name, email=email,

@@ -33,13 +33,13 @@
                         <div class="w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">CEP</label>
                             <input name="cep" type="number"
-                            class="w-full p-5 rounded-xl" required>
+                            class="w-full p-5 rounded-xl" value="{{request.user.userprofile.cep}}" required>
                         </div>
 
                         <div class="w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Endereço</label>
                             <input name="address" type="text"
-                            class="w-full p-5 rounded-xl" required>
+                            class="w-full p-5 rounded-xl" value="{{request.user.userprofile.address|default_if_none:''}}" required>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         <div class="w-full sm:w-full sm:w-1/2 mb-4">
                             <label class="inline-block mb-2">Telefone</label>
                             <input name="phone" type="number" 
-                            class="w-full p-5 rounded-xl" required>
+                            class="w-full p-5 rounded-xl" value="{{request.user.userprofile.phone}}" required>
                         </div>
                     </div>
                 </div>
