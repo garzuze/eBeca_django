@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{% load static %}
 {% block title %} Checkout {% endblock %}
 {% block content %}
 <div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
@@ -73,7 +73,7 @@
             </div>
     </div>
 
-    <div class="sumarry w-full lg:w-1/4 p-6 bg-gray-100 rounded-xl mt-3">
+    <div class="sumary w-full lg:w-1/4 p-6 bg-gray-100 rounded-xl mt-3">
         <h2 class="uppercase text-lg mb-5">Sumário</h2>
 
         <div class="mb-6 flex justify-between">
@@ -87,4 +87,5 @@
     </div>
     </form>
 </div>
+<script src="{% static 'cart/cep.js' %}"></script>
 {% endblock %}

@@ -25,12 +25,12 @@
             </div>
             {% if request.user.is_authenticated %}
                 {% if cart %}
-                    <a href="{% url 'checkout' %}" class="inline-block px-8 py-4 rounded-xl 
-                    bg-blue-500 hover:bg-blue-700 text-white">Finalizar</a>
+                    <a href="{% url 'checkout' %}" class="w-full inline-block text-center px-8 py-4 rounded-xl 
+                    bg-blue-500 hover:bg-blue-700 text-white">Finalizar compra!</a>
                 {% endif %}
             {% else %}
-                <a href="{% url 'signup' %}" class="inline px-8 py-4 rounded-xl 
-                text-blue-600 hover:bg-gray-200 font-medium">É preciso se cadastrar!</a>
+                <a href="{% url 'signup' %}" class="w-full inline-block text-center px-8 py-4 rounded-xl 
+                text-blue-600 hover:bg-gray-200 font-medium">Finalizar compra!</a>
             {% endif %}
         </div>
     </div>
